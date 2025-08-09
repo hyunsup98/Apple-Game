@@ -76,6 +76,18 @@ public class MouseDragController : MonoBehaviour
         return localPos;
     }
 
+    public void Init()
+    {
+        if(selectedAppleList.Count > 0)
+        {
+            foreach(Apple apple in selectedAppleList)
+            {
+                apple.OnDeselected();
+            }
+        }
+        dragRectangle.sizeDelta = Vector2.zero;
+    }
+
     private void DrawDragRectangle()
     {
         dragRectangle.anchoredPosition = (start + end) * 0.5f;

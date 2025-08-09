@@ -1042,6 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d005bfc4ec3cd4781eb597b41aaf54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragController: {fileID: 1973988842}
   inGame: {fileID: 1720269298}
   mainMenu: {fileID: 1208674338}
   audioSource: {fileID: 1586762402}

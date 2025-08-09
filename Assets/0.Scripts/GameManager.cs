@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private MouseDragController dragController;
+
     [SerializeField] private GameObject inGame;
     [SerializeField] private GameObject mainMenu;
 
@@ -77,8 +79,9 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameStart = false;
-        StopAllCoroutines();
+        dragController.Init();
         text_Score.text = $"게임 종료";
+        StopAllCoroutines();
         audioSource.Stop();
     }
 
@@ -112,6 +115,7 @@ public class GameManager : MonoBehaviour
         if(timer <= 0)
         {
             GameOver();
+            text_Timer.text = $"0:00";
         }
     }
 }
