@@ -37,6 +37,34 @@ public class AppleSpawner : MonoBehaviour
                 Apple apple = clone.GetComponent<Apple>();
                 apple.Number = Random.Range(1, 10);
 
+                if(y == height - 1 && x == width - 2)
+                {
+                    var exclusionNumber = 10 - (sum % 10);
+
+                    if(apple.Number ==  exclusionNumber)
+                    {
+                        if(apple.Number == 1)
+                        {
+                            apple.Number = Random.Range(2, 10);
+                        }
+                        else if(apple.Number == 9)
+                        {
+                            apple.Number = Random.Range(1, 9);
+                        }
+                        else
+                        {
+                            if(apple.Number < 6)
+                            {
+                                apple.Number = Random.Range(1, exclusionNumber);
+                            }
+                            else
+                            {
+                                apple.Number = Random.Range(exclusionNumber + 1, 10);
+                            }
+                        }
+                    }
+                }
+
                 if(y == height - 1 && x == width - 1)
                 {
                     apple.Number = 10 - (sum % 10);

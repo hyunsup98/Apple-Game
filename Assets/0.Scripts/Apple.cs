@@ -1,3 +1,5 @@
+using Solo.MOST_IN_ONE;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +31,10 @@ public class Apple : MonoBehaviour
 
     public void OnSelected()
     {
+        if(image.color != Color.blue)
+        {
+            Most_HapticFeedback.Generate(Most_HapticFeedback.HapticTypes.Selection);
+        }
         image.color = Color.blue;
     }
 

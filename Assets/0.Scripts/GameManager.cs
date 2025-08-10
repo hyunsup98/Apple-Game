@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
 
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource gameoverAudioSource;
     [SerializeField] private Image imgSound;
     [SerializeField] private Sprite spriteSoundOn;
     [SerializeField] private Sprite spriteSoundOff;
@@ -80,9 +81,10 @@ public class GameManager : MonoBehaviour
     {
         isGameStart = false;
         dragController.Init();
-        text_Score.text = $"게임 종료";
+        //게임 종료 판넬 내려오기
         StopAllCoroutines();
         audioSource.Stop();
+        gameoverAudioSource.Play();
     }
 
     public void OnClickMainMenu()
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         Score += point;
     }
+
 
     private IEnumerator TimerCoroutine()
     {
@@ -107,6 +110,8 @@ public class GameManager : MonoBehaviour
 
             int minutes = Mathf.FloorToInt(timer / 60);
             int seconds = Mathf.FloorToInt(timer % 60);
+            minutes = Mathf.Max(minutes, 0);
+            seconds = Mathf.Max(seconds, 0);
             text_Timer.text = string.Format("{0:0}:{1:00}", minutes, seconds);
 
             yield return null;
