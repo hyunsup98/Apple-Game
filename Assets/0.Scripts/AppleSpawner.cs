@@ -75,8 +75,6 @@ public class AppleSpawner : MonoBehaviour
                 appleList.Add(apple);
             }
         }
-
-        Debug.Log($"AppleSpawner::SpawnApples() : {sum}");
     }
 
     public void DestroyApple(Apple removeApple)

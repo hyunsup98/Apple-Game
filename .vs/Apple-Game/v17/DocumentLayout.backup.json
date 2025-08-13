@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|solutionrelative:assets\\0.scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|C:\\Unity\\Projects\\Apple-Game\\assets\\0.scripts\\apple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|solutionrelative:assets\\0.scripts\\apple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|c:\\unity\\projects\\apple-game\\assets\\0.scripts\\mousedragcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|C:\\Unity\\Projects\\Apple-Game\\assets\\0.scripts\\mousedragcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|solutionrelative:assets\\0.scripts\\mousedragcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|C:\\Unity\\Projects\\Apple-Game\\assets\\0.scripts\\applespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|solutionrelative:assets\\0.scripts\\applespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|c:\\unity\\projects\\apple-game\\assets\\0.scripts\\apple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C5608F8-9270-595D-5FC0-862E181B926A}|Assembly-CSharp.csproj|solutionrelative:assets\\0.scripts\\apple.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,39 +30,39 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MouseDragController.cs",
               "DocumentMoniker": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\MouseDragController.cs",
               "RelativeDocumentMoniker": "Assets\\0.Scripts\\MouseDragController.cs",
               "ToolTip": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\MouseDragController.cs",
               "RelativeToolTip": "Assets\\0.Scripts\\MouseDragController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAFcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAvwE4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T14:35:16.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Apple.cs",
               "DocumentMoniker": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\Apple.cs",
               "RelativeDocumentMoniker": "Assets\\0.Scripts\\Apple.cs",
               "ToolTip": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\Apple.cs",
               "RelativeToolTip": "Assets\\0.Scripts\\Apple.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvyAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAArwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T14:35:14.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AppleSpawner.cs",
               "DocumentMoniker": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\AppleSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\0.Scripts\\AppleSpawner.cs",
               "ToolTip": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\AppleSpawner.cs",
               "RelativeToolTip": "Assets\\0.Scripts\\AppleSpawner.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwDAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T14:35:12.062Z",
               "EditorCaption": ""
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "Assets\\0.Scripts\\GameManager.cs",
               "ToolTip": "C:\\Unity\\Projects\\Apple-Game\\Assets\\0.Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\0.Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAMQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T14:34:56.148Z",
               "EditorCaption": ""

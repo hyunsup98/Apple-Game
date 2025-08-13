@@ -40,6 +40,7 @@ public class Apple : MonoBehaviour
 
     public void OnDeselected()
     {
-        image.color = Color.red;
+        if(image != null)
+            image.color = Color.red;
     }
 }

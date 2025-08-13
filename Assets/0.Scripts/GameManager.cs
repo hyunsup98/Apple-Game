@@ -1,8 +1,16 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class ScoreData
+{
+
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +32,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text text_Score;
 
+    [SerializeField] private GameObject objCountDown;
+    [SerializeField] private TMP_Text text_CountDown;
+    [SerializeField] private float countdownTime;
+
+    [SerializeField] private GameObject objResult;
+    [SerializeField] private TMP_Text text_Result;
+
+    private const string KEY_TOTALHIGHSCORE = "TotalHighScore";
+    private const string KEY_HIGHSCORE = "HighScore";
+    private const string KEY_LASTDATE = "LastDate";
+    [SerializeField] private TMP_Text text_TotalHighScore;
+    [SerializeField] private TMP_Text text_HighScore;
+
     public bool isGameStart { get; private set; }
 
     private int score;
@@ -33,7 +54,7 @@ public class GameManager : MonoBehaviour
         private set
         {
             score = value;
-            text_Score.text = $"점수: {score}";
+            text_Score.text = $"점수: {score} 점";
         }
     }
 
@@ -48,16 +69,43 @@ public class GameManager : MonoBehaviour
 
         isGameStart = false;
         Score = 0;
+
+        text_TotalHighScore.text = $"최고점수: {GetTotalHighScoreData().ToString()}점";
+        CheckDateData();
     }
 
     public void GameStart()
     {
-        isGameStart = true;
-
         mainMenu.SetActive(false);
         inGame.SetActive(true);
-        audioSource.Play();
 
+        text_HighScore.text = $"일일 최고점수: {GetScoreData().ToString()} 점";
+        StartCoroutine(CountDown());
+    }
+
+    public IEnumerator CountDown()
+    {
+        objCountDown.SetActive(true);
+        text_CountDown.gameObject.SetActive(true);
+        text_CountDown.text = countdownTime.ToString();
+
+        var timer = countdownTime;
+
+        while(timer > 0)
+        {
+            timer -= Time.deltaTime;
+            text_CountDown.text = Mathf.CeilToInt(timer).ToString();
+
+            yield return null;
+        }
+
+        text_CountDown.text = $"Start!";
+
+        yield return new WaitForSeconds(1f);
+
+        objCountDown.SetActive(false);
+        isGameStart = true;
+        audioSource.Play();
         StartCoroutine(TimerCoroutine());
     }
 
@@ -79,12 +127,18 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        isGameStart = false;
         dragController.Init();
-        //게임 종료 판넬 내려오기
-        StopAllCoroutines();
+        SaveScoreData(Score);
+        objResult.SetActive(true);
+        text_Result.text = $"{Score} 점";
         audioSource.Stop();
         gameoverAudioSource.Play();
+        StopAllCoroutines();
+    }
+
+    public void OnClickQuitResult(GameObject obj)
+    {
+        obj.SetActive(false);
     }
 
     public void OnClickMainMenu()
@@ -96,7 +150,6 @@ public class GameManager : MonoBehaviour
     {
         Score += point;
     }
-
 
     private IEnumerator TimerCoroutine()
     {
@@ -123,4 +176,47 @@ public class GameManager : MonoBehaviour
             text_Timer.text = $"0:00";
         }
     }
+
+    private void SaveScoreData(int score)
+    {
+        int currentHighScore = PlayerPrefs.GetInt(KEY_HIGHSCORE, 0);
+
+        if(score > currentHighScore)
+        {
+            PlayerPrefs.SetInt(KEY_HIGHSCORE, score);
+            PlayerPrefs.Save();
+        }
+
+        int totalHighScore = PlayerPrefs.GetInt(KEY_TOTALHIGHSCORE, 0);
+
+        if(score > totalHighScore)
+        {
+            PlayerPrefs.SetInt(KEY_TOTALHIGHSCORE, score);
+            PlayerPrefs.Save();
+        }
+    }
+
+    private int GetScoreData()
+    {
+        return PlayerPrefs.GetInt(KEY_HIGHSCORE, 0);
+    }
+
+    private int GetTotalHighScoreData()
+    {
+        return PlayerPrefs.GetInt(KEY_TOTALHIGHSCORE, 0);
+    }
+
+    private void CheckDateData()
+    {
+        string lastDate = PlayerPrefs.GetString(KEY_LASTDATE, string.Empty);
+        string today = DateTime.Now.ToString("yyyy-MM-dd");
+
+        if(lastDate != today)
+        {
+            PlayerPrefs.SetInt(KEY_HIGHSCORE, 0);
+            PlayerPrefs.SetString(KEY_LASTDATE, today);
+            PlayerPrefs.Save();
+        }
+    }
+
 }
